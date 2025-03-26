@@ -4,9 +4,9 @@ import{ Link } from "react-router-dom";
  function Movie({ id, coverImg, title, summary, genres }) {
    return (
      <div>
-       <Link to={`/movie/${id}`}><img src={coverImg} alt={title} /></Link>
+       <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}><img src={coverImg} alt={title} /></Link>
        <h2>
-        <Link to={`/movie/${id}`}>{title}</Link>
+        <Link to={`${process.env.PUBLIC_URL}/movie/${id}`}>{title}</Link>
        </h2>
        <p>{summary}</p>
        <ul>
