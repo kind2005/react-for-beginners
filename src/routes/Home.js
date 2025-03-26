@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Movie from "../component/Movie";
+import styles from "./Home.module.css";
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -13,9 +14,11 @@ function Home() {
     setMovies(json.data.movies);
     setLoading(false);
   };
+
   useEffect(() => {
     getMovies();
   }, []);
+  
   return (
     <div>
       {loading ? (
@@ -26,7 +29,7 @@ function Home() {
           {movies.map((movie) => (
             <li 
               key={movie.id} 
-              style={{display: "inline-block", width: "300px"}}>
+              className={styles.movie_list}>
               <Movie
                 id={movie.id}
                 coverImg={movie.medium_cover_image}
