@@ -1,6 +1,7 @@
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import styles from "./App.module.css";
-import { useState, useEffect } from "react";
+import useTitle from "./component/useTitle";
 
 function Test4() {
   const [counter, setCounter] = useState(0);
@@ -30,6 +31,9 @@ function Test4() {
     }, [showing]);
     return <h1>Hello</h1>;
   }
+  
+  const titleUpdater = useTitle("Test 화면");
+
   return (
     <div>
         <h1 className={styles.title}>Chama</h1>
